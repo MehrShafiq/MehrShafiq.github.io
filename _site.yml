@@ -1,14 +1,28 @@
-name: "Yay internet!"
+name: "Mehr's website"
 output_dir: "."
 navbar:
-  title: "Home"
+  title: "Mehr Shafiq"
+  left: 
+    - text: "Papers"
+      href: papers.html
+    - text: "Education"
+      href: education.html
+    - text: "Teaching"
+      href: teaching.html
   right:
     - text: "About"
       href: about.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:ms5965@columbia.edu
+    - icon: far fa-file
+      href: ./resources/resume.pdf
+    - icon: fab fa-linkedin
+      href: https://www.linkedin.com/in/mehrshafiq96/
     - icon: fa-github fa-lg
-      href: http://github.com/<YOUR_GH_NAME>/
+      href: http://github.com/MehrShafiq/
 output:
   html_document:
-    theme: cerulean
+    theme: journal
+    css: style.css
+    include:
+    after_body: footer.html

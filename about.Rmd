@@ -3,3 +3,6 @@ title: "About me"
 output: html_document
 ---
 
+I am currently pursuing my masters in public health at the Columbia University Mailman School of Public Health in the department of Epidemiology. My focus is on public health research methods and I hope to contribute in making a positive impact on population health, particularly women's health, worldwide.
+
+<br>Outside of the classroom, I enjoy travelling and trekking, as well as trying new desserts wherever I go! 

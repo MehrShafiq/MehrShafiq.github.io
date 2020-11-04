@@ -1,5 +1,20 @@
 ---
-title: "index"
-output: html_document
+title: "Mehr Shafiq"
 ---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+<link rel="stylesheet" href="academicons/css/academicons.min.css"/>
+
+<br>
+MPH Candidate 2021 <br>
+Columbia University Mailman School of Public Health <br>
+Department of Epidemiology | Certificate in Public Health Research Methods
+
+
+<center><br><img src ="images/mehr_image.jpeg" 
+         alt = "Mehr" 
+         style = "width:40%; border:10px solid black; left:50%"
+         class = "center"></center>
+
+
 
