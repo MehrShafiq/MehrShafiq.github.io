@@ -13,7 +13,7 @@ Department of Epidemiology | Certificate in Public Health Research Methods
 
 <center><br><img src ="images/mehr_image.jpeg" 
          alt = "Mehr" 
-         style = "width:40%; border:10px solid black; left:50%"
+         style = "width:40%; border:10px solid black"
          class = "center"></center>
 
 
