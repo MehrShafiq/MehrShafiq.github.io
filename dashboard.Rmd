@@ -1,0 +1,27 @@
+---
+title: "Dashboard"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(rvest)
+```
+
+```{r loading dataset}
+data(rest_inspec)
+
+rest_inspec = 
+  rest_inspec %>% 
+  filter(
+    boro %in% c("MANHATTAN", "BROOKLYN"),
+    grade != c("Z", "P", "Not Yet Graded"),
+    cuisine_description %in% c("American", "Asian", "French", "Italian", "Mexican", "Pakistani", "Korean")
+    ) %>% 
+  select(  
+    boro, score, cuisine_description, critical_flag, grade, inspection_type) %>% 
+  na.omit()
+```
+
