@@ -1,14 +1,20 @@
 ---
-title: "Dashboard"
-output: html_document
+title: "Dasboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    souce: embed
 ---
 
-```{r}
+```{r setup, include=FALSE}
+library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
 library(rvest)
 ```
+
 
 ```{r loading dataset}
 data(rest_inspec)
@@ -26,6 +32,12 @@ rest_inspec =
   na.omit()
 ```
 
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
 ```{r}
 rest_inspec %>% 
   count(cuisine_description) %>% 
@@ -34,13 +46,7 @@ rest_inspec %>%
     x = ~cuisine_description, y = ~n, type = "bar", colors = ~"magma", color = ~cuisine_description) 
 ```
 
-```{r}
-rest_inspec %>% 
-  count(grade) %>% 
-  mutate(grade = fct_reorder(grade, -n)) %>% 
-  plot_ly(
-    x = ~grade, y = ~n, type = "bar", colors = ~"magma", color = ~grade) 
-```
+### Chart B
 
 ```{r}
 rest_inspec %>% 
@@ -50,16 +56,21 @@ rest_inspec %>%
     x = ~boro, y = ~n, type = "bar", colors = ~"magma", color = ~boro) 
 ```
 
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart C
+
 ```{r}
 rest_inspec %>% 
-  mutate(boro = fct_reorder(boro, score)) %>% 
+  count(grade) %>% 
+  mutate(grade = fct_reorder(grade, -n)) %>% 
   plot_ly(
-    y = ~score, 
-    color = ~boro,
-    type = "box", 
-    colors = "magma")
+    x = ~grade, y = ~n, type = "bar", colors = ~"magma", color = ~grade) 
 ```
 
+### Chart D
 
 ```{r}
 rest_inspec %>% 
@@ -73,6 +84,16 @@ rest_inspec %>%
   colors = "magma", 
   mode = "lines",
   fill = "tozeroy")
-
 ```
 
+### Chart E
+
+```{r}
+rest_inspec %>% 
+  mutate(boro = fct_reorder(boro, score)) %>% 
+  plot_ly(
+    y = ~score, 
+    color = ~boro,
+    type = "box", 
+    colors = "magma")
+```

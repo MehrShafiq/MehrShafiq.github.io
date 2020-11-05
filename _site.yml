@@ -9,6 +9,8 @@ navbar:
       href: education.html
     - text: "Teaching"
       href: teaching.html
+    - text: "dashboard"
+      href: dashboard_1.html
   right:
     - text: "About"
       href: about.html
