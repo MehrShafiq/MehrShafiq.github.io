@@ -9,8 +9,6 @@ output: html_document
 <br>
 MPH Candidate 2021 <br>
 Columbia University Mailman School of Public Health <br>
-Department of Epidemiology | Certificate in Public Health Research Methods
-
 
 <center><br><img src ="images/mehr_image.jpeg" 
          alt = "Mehr" 

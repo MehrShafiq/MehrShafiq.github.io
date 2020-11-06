@@ -2,6 +2,7 @@
 title: ""
 output: html_document
 ---
+<br>
 
 ### Current Courses
 #### Columbia University Mailman School of Public Health

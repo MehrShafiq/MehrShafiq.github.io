@@ -2,4 +2,13 @@
 title: ""
 output: html_document
 ---
+<br>
 
+### Columbia University Mailman School of Public Health
+#### Master of Public Health, 2019 - 2021
+Department of Epidemiology 
+Certificate in Public Health Research Methods <br>
+
+### Lahore University of Management Sciences
+#### Bachelor of Science, 2015 - 2019
+Department of Biology
