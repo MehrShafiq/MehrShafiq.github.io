@@ -43,7 +43,10 @@ rest_inspec %>%
   count(cuisine_description) %>% 
   mutate(cuisine_description = fct_reorder(cuisine_description, -n)) %>% 
   plot_ly(
-    x = ~cuisine_description, y = ~n, type = "bar", colors = ~"magma", color = ~cuisine_description) 
+    x = ~cuisine_description, 
+    y = ~n, type = "bar", 
+    colors = ~"magma", 
+    color = ~cuisine_description) 
 ```
 
 ### Chart B
@@ -66,7 +69,11 @@ rest_inspec %>%
   count(boro) %>% 
   mutate(boro = fct_reorder(boro, -n)) %>% 
   plot_ly(
-    x = ~boro, y = ~n, type = "bar", colors = ~"magma", color = ~boro) 
+    x = ~boro, 
+    y = ~n, 
+    type = "bar", 
+    colors = ~"magma", 
+    color = ~boro) 
 ```
 
 
@@ -80,22 +87,26 @@ rest_inspec %>%
   count(grade) %>% 
   mutate(grade = fct_reorder(grade, -n)) %>% 
   plot_ly(
-    x = ~grade, y = ~n, type = "bar", colors = ~"magma", color = ~grade) 
+    x = ~grade, 
+    y = ~n, 
+    type = "bar", 
+    colors = ~"magma", 
+    color = ~grade) 
 ```
 
-### Chart E
+#### Chart E
 
 ```{r}
-rest_inspec %>% 
-  group_by(grade_date, grade) %>% 
+boro_trend = 
+  rest_inspec %>% 
+  group_by(boro, grade, grade_date) %>% 
   summarize(n_obs = n()) %>% 
-  plot_ly(
-  y = ~n_obs,
-  x = ~grade_date,
-  color = ~grade,
-  type = "scatter",
-  colors = "magma", 
-  mode = "lines",
-  fill = "tozeroy")
-```
+  ggplot(aes(y = n_obs, x = grade_date, color = grade)) + 
+  geom_smooth(se = FALSE) + 
+  theme(legend.position = "bottom", axis.text.x = element_text(angle = 90, hjust = 1)) + 
+  scale_color_brewer(palette = "RdPu") +
+  facet_grid(~boro) +
+  xlab("\n \n \n Grade Date") + ylab("Number of Observations \n \n")
 
+ggplotly(boro_trend)
+```

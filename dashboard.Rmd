@@ -50,16 +50,6 @@ rest_inspec %>%
     x = ~boro, y = ~n, type = "bar", colors = ~"magma", color = ~boro) 
 ```
 
-```{r}
-rest_inspec %>% 
-  mutate(boro = fct_reorder(boro, score)) %>% 
-  plot_ly(
-    y = ~score, 
-    color = ~boro,
-    type = "box", 
-    colors = "magma")
-```
-
 
 ```{r}
 rest_inspec %>% 
