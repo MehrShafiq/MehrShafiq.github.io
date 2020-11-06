@@ -50,6 +50,19 @@ rest_inspec %>%
 
 ```{r}
 rest_inspec %>% 
+  mutate(boro = fct_reorder(boro, score)) %>% 
+  plot_ly(
+    y = ~score, 
+    color = ~boro,
+    type = "box", 
+    colors = "magma")
+```
+
+
+### Chart C
+
+```{r}
+rest_inspec %>% 
   count(boro) %>% 
   mutate(boro = fct_reorder(boro, -n)) %>% 
   plot_ly(
@@ -60,7 +73,7 @@ rest_inspec %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart C
+### Chart D
 
 ```{r}
 rest_inspec %>% 
@@ -70,7 +83,7 @@ rest_inspec %>%
     x = ~grade, y = ~n, type = "bar", colors = ~"magma", color = ~grade) 
 ```
 
-### Chart D
+### Chart E
 
 ```{r}
 rest_inspec %>% 
@@ -86,14 +99,3 @@ rest_inspec %>%
   fill = "tozeroy")
 ```
 
-### Chart E
-
-```{r}
-rest_inspec %>% 
-  mutate(boro = fct_reorder(boro, score)) %>% 
-  plot_ly(
-    y = ~score, 
-    color = ~boro,
-    type = "box", 
-    colors = "magma")
-```
