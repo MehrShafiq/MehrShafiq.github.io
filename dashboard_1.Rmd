@@ -97,6 +97,23 @@ rest_inspec %>%
 #### Chart E
 
 ```{r}
+rest_inspec %>% 
+  group_by(grade_date, grade) %>% 
+  summarize(n_obs = n()) %>% 
+  plot_ly(
+  y = ~n_obs,
+  x = ~grade_date,
+  color = ~grade,
+  type = "scatter",
+  colors = "magma", 
+  mode = "lines",
+  fill = "tozeroy")
+
+```
+
+#### Chart F
+
+```{r}
 boro_trend = 
   rest_inspec %>% 
   group_by(boro, grade, grade_date) %>% 
