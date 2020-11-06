@@ -7,7 +7,9 @@ output: html_document
 ### Columbia University Mailman School of Public Health
 #### Master of Public Health, 2019 - 2021
 Department of Epidemiology 
-Certificate in Public Health Research Methods <br>
+Certificate in Public Health Research Methods
+
+<br>
 
 ### Lahore University of Management Sciences
 #### Bachelor of Science, 2015 - 2019

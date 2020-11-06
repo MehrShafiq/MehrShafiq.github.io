@@ -66,3 +66,19 @@ rest_inspec %>%
 
 ```
 
+#### Chart F
+
+```{r}
+boro_trend = 
+  rest_inspec %>% 
+  group_by(boro, grade, grade_date) %>% 
+  summarize(n_obs = n()) %>% 
+  ggplot(aes(y = n_obs, x = grade_date, color = grade)) + 
+  geom_smooth(se = FALSE) + 
+  theme(legend.position = "bottom", axis.text.x = element_text(angle = 90, hjust = 1)) + 
+  scale_color_brewer(palette = "RdPu") +
+  facet_grid(~boro) +
+  xlab("\n \n \n Grade Date") + ylab("Number of Observations \n \n")
+
+ggplotly(boro_trend)
+```
